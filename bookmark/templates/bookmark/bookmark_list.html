@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Django Bookmark List</title>
+</head>
+<body>
+
+<div id = "content">
+
+    <h1>Bookmark List</h1>
+
+    <ul>
+        {% for bookmark in object_list %}
+            <li><a href="{% url 'detail' bookmark.id %}">{{ bookmark }}</a> </li>
+        {% endfor %}
+    </ul>
+
+
+</div>
+
+</body>
+</html>
