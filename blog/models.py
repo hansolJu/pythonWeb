@@ -6,7 +6,9 @@ from django.urls import reverse
 
 class Post(models.Model):
     title = models.CharField('TITLE', max_length=50)
-    slug = models.SlugField = ('SLUG',)  # help_text = ('one word for title alias')
+    slug = models.SlugField(max_length=255,unique=True)
+    # slug = models.SlugField = ('SLUG',unique = True,allow_unicode = True,help_text='one word for title alias')  # help_text = ('')
+    # slug = models.SlugField = (_('slug'),unique=True)
     description = models.CharField('DESCRIPTION', max_length=100, blank=True, help_text='simple description text')
     content = models.TextField('CONTENT')
     create_date = models.DateTimeField('Create Date', auto_now_add=True)
@@ -23,6 +25,7 @@ class Post(models.Model):
 
     def get_absolute_url(self):
         return reverse('blog:post_detail', args=(self.slug,))
+        # return reverse('blog:post_detail', kwargs={'slug':self.slug })
 
     def get_previous_post(self):
         return self.get_previous_by_modify_date()

@@ -1,11 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Django Bookmark Detail</title>
-</head>
-<body>
+{% extends "base.html" %}
 
+{% block title %}
+Django Bookmark Detail
+{% endblock %}
+
+{% block content %}
 <div id ="content">
 
     <h1>{{ object.title }}</h1>
@@ -15,6 +14,4 @@
     </ul>
 
 </div>
-
-</body>
-</html>
+{% endblock %}
