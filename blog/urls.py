@@ -4,8 +4,6 @@ from blog.views import *
 
 app_name='blog'
 urlpatterns = [
-    # ex: /admin/
-
     # ex: /blog/
     path('', PostLV.as_view(), name = 'index'),
 
@@ -28,4 +26,8 @@ urlpatterns = [
     # ex: /today/
     path('today/',PostTAV.as_view(),name='post_day_archive'),
 
+    # ex: /tag/
+    path('tag/',TagTV.as_view(),name='tag_cloud'),
+    # path('tag/<tag:tag>',PostTOL.as_view(),name='tagged_object_list'),
+    re_path(r'^tag/(?P<tag>[^/]+(?u))/$', PostTOL.as_view(),name='tagged_object_list'),
 ]

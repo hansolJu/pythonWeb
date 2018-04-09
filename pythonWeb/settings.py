@@ -39,7 +39,13 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'bookmark.apps.BookmarkConfig',#bookmark app 추가
     'blog.apps.BlogConfig',# blog app 추가
+    'tagging.apps.TaggingConfig',# tagging app 추가
+    'disqus',
+    'django.contrib.sites',
 ]
+# disqus 셋팅
+DISQUS_WEBSITE_SHORTNAME='pythonwebprogramminghansol'
+SITE_ID=1
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
