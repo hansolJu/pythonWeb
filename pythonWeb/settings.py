@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'tagging.apps.TaggingConfig',# tagging app 추가
     'disqus',
     'django.contrib.sites',
+    'photo.apps.PhotoConfig',
 ]
 # disqus 셋팅
 DISQUS_WEBSITE_SHORTNAME='pythonwebprogramminghansol'
