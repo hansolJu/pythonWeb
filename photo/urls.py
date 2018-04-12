@@ -13,5 +13,6 @@ urlpatterns = [
     path('album/<int:pk>/',AlbumDV.as_view(),name='album_detail'),
     # ex: /photo/99/
     path('photo/<int:pk>/',PhotoDV.as_view(),name='photo_detail'),
+    
 
 ]
