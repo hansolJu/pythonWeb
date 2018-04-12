@@ -17,10 +17,16 @@ from django.conf import settings
 from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls.static import static
+
 from pythonWeb.views import HomeView
+from pythonWeb.views import UserCreateView,UserCreateDoneTV
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    #인증 URL
+    path('accounts/', include('django.contrib.auth.urls')),
+    path('accounts/register/',UserCreateView.as_view(),name = 'register'),
+    path('accounts/register/done/',UserCreateDoneTV.as_view(),name='register_done'),
 
     path('',HomeView.as_view(),name='home'),
     path('bookmark/',include('bookmark.urls')),

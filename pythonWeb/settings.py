@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    #이하는 추가된 앱들
     'bookmark.apps.BookmarkConfig',#bookmark app 추가
     'blog.apps.BlogConfig',# blog app 추가
     'tagging.apps.TaggingConfig',# tagging app 추가
@@ -137,3 +138,9 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR,'static')]#추가
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
+
+#auth
+
+#LOGIN_URL = '/accounts/login/'
+# LOGOUT_URL = '/accounts/logout/'
+LOGIN_REDIRECT_URL = '/'
