@@ -34,4 +34,16 @@ urlpatterns = [
 
     # ex: /search/
     path('search/',SearchFormView.as_view(),name='search'),
+
+    # CRUD
+    # ex: /add/
+    path('add/',PostCreateView.as_view(),name='add'),
+    # ex: /change/
+    path('change/',PostChangeLV.as_view(),name='change'),
+    # ex: /5/update/
+    path('<int:pk>/update/',PostUpdateView.as_view(),name='update'),
+    # ex: /5/delete/
+    path('<int:pk>/delete/',PostDeleteView.as_view(),name='delete'),
+
 ]
+
