@@ -1,4 +1,4 @@
-from django.urls import path,re_path
+from django.urls import path, re_path
 
 from blog.views import *
 
@@ -16,12 +16,12 @@ urlpatterns = [
     # ex: /archive/
     path('archive/',PostAV.as_view(),name='post_archive'),
 
-    #ex: /2012/
-    path('<int:year>/',PostYAV.as_view(),name='post_year_archive'),
+    # ex: /2012/
+    re_path(r'^(?P<year>\d{4})/$',PostYAV.as_view(),name='post_year_archive'),
     # ex: /2012/nov
-    path('<int:year>/<int:month>/',PostMAV.as_view(),name='post_month_archive'),
+    re_path(r'^(?P<year>\d{4})/$(?P<month>[0-9ㄱ-힣]{1,3})/$',PostMAV.as_view(),name='post_month_archive'),
     # ex: /2012/nov/10
-    path('<int:year>/<int:month>/<int:day>',PostDAV.as_view(),name='post_day_archive'),
+    re_path(r'^(?P<year>\d{4})/$(?P<month>[a-z]{3})/(?P<day>\d{1,2})/$',PostDAV.as_view(),name='post_day_archive'),
 
     # ex: /today/
     path('today/',PostTAV.as_view(),name='post_day_archive'),

@@ -25,22 +25,22 @@ home.html
         <tr>
             <td><b><i><a href="{% url 'bookmark:index' %}">Bookmark</a> </i></b></td>
             <td>You can write your own post and share to others. Donec id elit non mi porta gravida at eget metus. Fusce dapobus, tellus ac cursus commodo</td>
-            <td class="Edit"><i><a href="#">Add</a></i></td>
-            <td class="Edit"><i><a href="#">Change</a></i></td>
+            <td class="Edit"><i><a href="{% url 'bookmark:add' %}">Add</a></i></td>
+            <td class="Edit"><i><a href="{% url 'bookmark:change' %}">Change</a></i></td>
         </tr>
 
         <tr>
             <td><b><i><a href="{% url 'blog:index' %}">Blog</a> </i></b></td>
             <td>You can write your own post and share to others. Donec id elit non mi porta gravida at eget metus. Fusce dapobus, tellus ac cursus commodo</td>
-            <td class="Edit"><i><a href="#">Add</a></i></td>
-            <td class="Edit"><i><a href="#">Change</a></i></td>
+            <td class="Edit"><i><a href="{% url 'blog:add' %}">Add</a></i></td>
+            <td class="Edit"><i><a href="{% url 'blog:change' %}">Change</a></i></td>
         </tr>
 
         <tr>
-            <td><b><i><a href="#">Photo</a> </i></b></td>
+            <td><b><i><a href="{% url 'photo:index' %}">Photo</a> </i></b></td>
             <td>You can write your own post and share to others. Donec id elit non miporta gravida at eget metus. Dusce dapibus, tellus ac cursus commodo</td>
-            <td class="Edit"><i><a href="#">Add</a></i></td>
-            <td class="Edit"><i><a href="#">Change</a></i></td>
+            <td class="Edit"><i><a href="{% url 'photo:album_add' %}">Add</a></i></td>
+            <td class="Edit"><i><a href="{% url 'photo:album_change' %}">Change</a></i></td>
         </tr>
     </table>
 </div>
@@ -48,6 +48,6 @@ home.html
 
 {% block footer %}
 <div id="footer">
-    &copy; Ju 2018
+    &copy; Hansol Ju 2018
 </div>
 {% endblock footer%}

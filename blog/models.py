@@ -18,7 +18,7 @@ class Post(models.Model):
     description = models.CharField('DESCRIPTION', max_length=100, blank=True, help_text='simple description text')
     content = models.TextField('CONTENT')
     create_date = models.DateTimeField('Create Date', auto_now_add=True)
-    modify_date = models.DateTimeField('Modify_Date', auto_now_add=True)
+    modify_date = models.DateTimeField('Modify_Date', auto_now=True)
     tag = TagField()
     owner = models.ForeignKey(User, null=True, on_delete=models.CASCADE)
 
